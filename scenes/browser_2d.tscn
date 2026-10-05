@@ -75,6 +75,13 @@ custom_minimum_size = Vector2(256, 256)
 layout_mode = 2
 color = Color(0.5, 0.5, 0.5, 1)
 
+[node name="TextureRectBig" type="TextureRect" parent="CenterContainer" unique_id=294684817]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(512, 512)
+layout_mode = 2
+texture = ExtResource("2_tlq64")
+expand_mode = 1
+
 [node name="ShaderName" type="Label" parent="." unique_id=1247329545]
 unique_name_in_owner = true
 layout_mode = 1

@@ -1,0 +1,7 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://cem2e1ph7e38w"]
+
+[ext_resource type="Shader" uid="uid://cdwut5000rtgy" path="res://2dShaders/pulse.gdshader" id="1_1gm7d"]
+
+[resource]
+shader = ExtResource("1_1gm7d")
+shader_parameter/mutatorA = 0.5

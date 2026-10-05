@@ -1,0 +1,24 @@
+find . -type f -name "*.gdshader" -exec stat -c "%Y %n" {} \;  | grep -vi roam | grep -vi 2dShaders | sort -n
+
+
+1733010416 ./madscientistclicker/Art/circuit.gdshader
+1737148405 ./loop-hero/Art/enemy.gdshader
+1737148405 ./loop-hero/Art/firepit.gdshader
+1737928078 ./loop-hero/Art/background.gdshader
+1740164866 ./erase/Art/flowShader.gdshader
+1740783396 ./erase/Art/ScrollingRedArrow.gdshader
+1742185146 ./erase/Art/roundedCorners.gdshader
+1742185146 ./erase/Art/waggly.gdshader
+1742185194 ./wild-jam-79-growing/roundedCorners.gdshader
+1742185194 ./wild-jam-79-growing/roundedCorners_old.gdshader
+1742185194 ./wild-jam-79-growing/waggly.gdshader
+1749414187 ./nexus-sextus/Art/Shader/ponderosa.gdshader
+1749414187 ./nexus-sextus/Art/Shader/ponderosa_3d.gdshader
+1749414187 ./nexus-sextus/Art/Shader/scrolling_line.gdshader
+1749414187 ./nexus-sextus/Art/Shader/target_aoe.gdshader
+1750438208 ./wild-jam-82-unseen/Art/Shaders/contracting_circle.gdshader
+1750438208 ./wild-jam-82-unseen/Art/Shaders/footstep.gdshader
+1751643529 ./wild-jam-82-unseen/Art/Shaders/planet_alignment.gdshader
+1761968846 ./fantasy-battle/Art/rock.gdshader
+1784306756 ./wild-jam-95-retro/Scripts/Shaders/color_interior.gdshader
+

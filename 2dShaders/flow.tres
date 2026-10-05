@@ -1,0 +1,23 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dimp6a0s0cxge"]
+
+[ext_resource type="Shader" uid="uid://5ch4rnhgwii3" path="res://2dShaders/flow.gdshader" id="1_avk6v"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ev3b4"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_2ci31"]
+width = 256
+height = 256
+noise = SubResource("FastNoiseLite_ev3b4")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_xf85h"]
+noise_type = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_sn6p8"]
+width = 256
+height = 256
+noise = SubResource("FastNoiseLite_xf85h")
+
+[resource]
+shader = ExtResource("1_avk6v")
+shader_parameter/noiseX = SubResource("NoiseTexture2D_2ci31")
+shader_parameter/noiseY = SubResource("NoiseTexture2D_sn6p8")

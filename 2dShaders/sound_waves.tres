@@ -1,0 +1,16 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://cirie488ylqfe"]
+
+[ext_resource type="Shader" uid="uid://dcpiijbqh3cvp" path="res://2dShaders/sound_waves.gdshader" id="1_6cps1"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_dvip1"]
+
+[sub_resource type="NoiseTexture3D" id="NoiseTexture3D_q7h0a"]
+noise = SubResource("FastNoiseLite_dvip1")
+
+[resource]
+shader = ExtResource("1_6cps1")
+shader_parameter/sections = 2.5
+shader_parameter/speed = 0.75
+shader_parameter/gauge = 4.5
+shader_parameter/noiseImage = SubResource("NoiseTexture3D_q7h0a")
+shader_parameter/lightColor = Color(0.032666635, 0, 0.49, 1)

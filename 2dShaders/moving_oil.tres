@@ -1,0 +1,18 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://cucobopgubjng"]
+
+[ext_resource type="Shader" uid="uid://sco67aw3olk1" path="res://2dShaders/moving_oil.gdshader" id="1_rq8se"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_1l2o3"]
+
+[sub_resource type="NoiseTexture3D" id="NoiseTexture3D_soiqu"]
+noise = SubResource("FastNoiseLite_1l2o3")
+
+[resource]
+shader = ExtResource("1_rq8se")
+shader_parameter/zoom = 1.0
+shader_parameter/timeScale = 1.0
+shader_parameter/noiseImage = SubResource("NoiseTexture3D_soiqu")
+shader_parameter/primary_tint = Color(0.666667, 1, 1, 1)
+shader_parameter/secondary_tint = Color(0, 0, 0.164706, 1)
+shader_parameter/color_a = Color(0.101961, 0.619608, 0.666667, 1)
+shader_parameter/color_b = Color(0.666667, 0.666667, 0.498039, 1)

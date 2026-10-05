@@ -1,0 +1,16 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://wcfuucg5tn43"]
+
+[ext_resource type="Shader" uid="uid://qxkf6in5ce7r" path="res://2dShaders/clouds.gdshader" id="1_r05yr"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ruvym"]
+
+[sub_resource type="NoiseTexture3D" id="NoiseTexture3D_68ynh"]
+noise = SubResource("FastNoiseLite_ruvym")
+
+[resource]
+shader = ExtResource("1_r05yr")
+shader_parameter/zoom = 1.0
+shader_parameter/timeScale = 1.0
+shader_parameter/noiseImage = SubResource("NoiseTexture3D_68ynh")
+shader_parameter/color_a = Color(0.101961, 0.619608, 0.666667, 1)
+shader_parameter/color_b = Color(0.666667, 0.666667, 0.498039, 1)
