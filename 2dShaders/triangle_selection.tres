@@ -1,0 +1,6 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://c66ro8mrmvr3l"]
+
+[ext_resource type="Shader" uid="uid://5ownu8k36pea" path="res://2dShaders/triangle_selection.gdshader" id="1_650gt"]
+
+[resource]
+shader = ExtResource("1_650gt")

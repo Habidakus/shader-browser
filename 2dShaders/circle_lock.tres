@@ -1,0 +1,19 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://djdus2k5xjx42"]
+
+[ext_resource type="Shader" uid="uid://qlcl0dy8nnom" path="res://2dShaders/circle_lock.gdshader" id="1_np6pw"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_7tdsb"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ol5rx"]
+noise = SubResource("FastNoiseLite_7tdsb")
+
+[resource]
+shader = ExtResource("1_np6pw")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_ol5rx")
+shader_parameter/rings = 4.0
+shader_parameter/bands = 29
+shader_parameter/band_expansion = 13
+shader_parameter/band_shortness = 3.5
+shader_parameter/turn_speed = 0.45
+shader_parameter/jitter_speed = 2.5
+shader_parameter/paint_color = Color(0, 0, 0, 1)

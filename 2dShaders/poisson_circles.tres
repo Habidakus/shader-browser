@@ -1,0 +1,15 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://jupabx1vcvvq"]
+
+[ext_resource type="Shader" uid="uid://cy3u11uxhjdtl" path="res://2dShaders/poisson_circles.gdshader" id="1_k5kma"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_4lgfr"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_e8wax"]
+noise = SubResource("FastNoiseLite_4lgfr")
+
+[resource]
+shader = ExtResource("1_k5kma")
+shader_parameter/background_color = Color(0.96, 0.96, 0.96, 0)
+shader_parameter/circle_color = Color(0, 0, 0, 1)
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_e8wax")
+shader_parameter/size = 50

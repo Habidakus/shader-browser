@@ -1,0 +1,32 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bmcy358q1735b"]
+
+[ext_resource type="Shader" uid="uid://d3m4tk2m1ryqr" path="res://2dShaders/wiggle_coil.gdshader" id="1_tvw7f"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_tvw7f"]
+fractal_octaves = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_d7nmr"]
+width = 256
+height = 256
+noise = SubResource("FastNoiseLite_tvw7f")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_d7nmr"]
+noise_type = 3
+fractal_octaves = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_gr72v"]
+width = 256
+height = 256
+noise = SubResource("FastNoiseLite_d7nmr")
+
+[resource]
+shader = ExtResource("1_tvw7f")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_d7nmr")
+shader_parameter/width_texture = SubResource("NoiseTexture2D_gr72v")
+shader_parameter/speed = 0.533
+shader_parameter/rotate_speed = 0.016
+shader_parameter/spacing = 35
+shader_parameter/width = 4
+shader_parameter/order = 3.0
+shader_parameter/extra_width_threshold = 0.5
+shader_parameter/extra_width_max = 3.0
