@@ -22,6 +22,7 @@ var _materials: Array = [
 	["Contracting Circle", preload("res://2dShaders/contracting_circle.tres"), false],
 	["Directional Pulse", preload("res://2dShaders/directional_pulse.tres"), true],
 	["Planetary Alignment Timer", preload("res://2dShaders/planet_alignment.tres"), false],
+	["Color Interior", preload("res://2dShaders/color_interior.tres"), false],
 ]
 var _index: int = 0;
 

@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bq6sg0vs578ke"]
+
+[ext_resource type="Shader" uid="uid://co52aax5cu858" path="res://2dShaders/color_interior.gdshader" id="1_jun6g"]
+
+[resource]
+shader = ExtResource("1_jun6g")
+shader_parameter/target_color = Color(1, 0, 0, 1)
+shader_parameter/white_threshold = 0.95
+shader_parameter/alpha_threshold = 0.65
+shader_parameter/edge_thickness = 1.6
