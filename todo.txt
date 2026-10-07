@@ -1,6 +1,2 @@
 find . -type f -name "*.gdshader" -exec stat -c "%Y %n" {} \;  | grep -vi roam | grep -vi 2dShaders | sort -n
 
-
-1761968846 ./fantasy-battle/Art/rock.gdshader
-1784306756 ./wild-jam-95-retro/Scripts/Shaders/color_interior.gdshader
-
