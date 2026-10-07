@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://c66ro8mrmvr3l"]
+
+[ext_resource type="Shader" uid="uid://ffpicnwyjous" path="res://2dShaders/scrolling.gdshader" id="1_l4mtf"]
+
+[resource]
+shader = ExtResource("1_l4mtf")
+shader_parameter/horz_speed = 0.15
+shader_parameter/vert_speed = 0.0

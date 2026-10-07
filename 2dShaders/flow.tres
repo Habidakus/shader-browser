@@ -2,6 +2,11 @@
 
 [ext_resource type="Shader" uid="uid://5ch4rnhgwii3" path="res://2dShaders/flow.gdshader" id="1_avk6v"]
 
+[sub_resource type="Gradient" id="Gradient_avk6v"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ev3b4"]
+gradient = SubResource("Gradient_avk6v")
+
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_ev3b4"]
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_2ci31"]
@@ -19,5 +24,7 @@ noise = SubResource("FastNoiseLite_xf85h")
 
 [resource]
 shader = ExtResource("1_avk6v")
+shader_parameter/speed = 0.5
+shader_parameter/color_gradient = SubResource("GradientTexture1D_ev3b4")
 shader_parameter/noiseX = SubResource("NoiseTexture2D_2ci31")
 shader_parameter/noiseY = SubResource("NoiseTexture2D_sn6p8")

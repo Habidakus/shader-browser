@@ -1,5 +1,7 @@
 shader_type canvas_item;
 
+uniform float speed;
+uniform sampler2D color_gradient;
 uniform sampler2D noiseX;
 uniform sampler2D noiseY;
 
@@ -32,13 +34,13 @@ float worley(vec2 uv, float columns, float rows) {
 void fragment() {
 	float x = texture(noiseX, UV).g;
 	float y = texture(noiseY, UV).g;
-	float angle = TIME / 6.0 - float(int(TIME / 6.0)) * TAU;
+	float angle = speed * TIME / 6.0 - float(int(TIME / 6.0)) * TAU;
 	float dx = cos(angle);
 	float dy = sin(angle);
 	vec2 samplePos = vec2(x, y) / 2.0 + vec2(dx, dy) / 4.0 + vec2(0.25, 0.25);
+	
+	
 	float worleyOuter = worley(samplePos, 4.0, 4.0);
 	float worleyInner = worley(samplePos, 40.0, 40.0);
-	float v = worleyOuter * worleyOuter * worleyInner;
-	float r = texture(TEXTURE, UV).r;
-	COLOR = vec4(vec3(mix(0, r, v), 0.2 - v / 5.0, v/5.0), 1.0);
+	COLOR = texture(color_gradient, vec2(worleyOuter * worleyOuter * worleyInner)).rgba;
 }

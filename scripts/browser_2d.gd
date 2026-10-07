@@ -7,13 +7,16 @@ var _materials: Array = [
 	["Wiggle Coil", preload("res://2dShaders/wiggle_coil.tres"), false],
 	["Triangle Selection", preload("res://2dShaders/triangle_selection.tres"), false],
 	["Pulse Red", preload("res://2dShaders/pulse.tres"), false],
-	["Flow", preload("res://2dShaders/flow.tres"), true],
 	["Sound Waves", preload("res://2dShaders/sound_waves.tres"), false],
 	["Clouds", preload("res://2dShaders/clouds.tres"), true],
 	["Moving Oil", preload("res://2dShaders/moving_oil.tres"), true],
 	["Firepit", preload("res://2dShaders/firepit.tres"), true],
 	["Circuit", preload("res://2dShaders/circuit.tres"), true],
 	["Glowing Edge", preload("res://2dShaders/glowing-edge.tres"), true],
+	["Flow", preload("res://2dShaders/flow.tres"), true],
+	["Scrolling", preload("res://2dShaders/scrolling.tres"), false],
+	["Rounded Corners", preload("res://2dShaders/rounded_corners.tres"), false],
+	["Waggly Edges", preload("res://2dShaders/waggly_edges.tres"), false],
 ]
 var _index: int = 0;
 

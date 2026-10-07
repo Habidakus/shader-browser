@@ -1,0 +1,14 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://c66ro8mrmvr3l"]
+
+[ext_resource type="Shader" uid="uid://da7ypb4kmtu3g" path="res://2dShaders/waggly_edges.gdshader" id="1_wf1nv"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_wf1nv"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_tg183"]
+noise = SubResource("FastNoiseLite_wf1nv")
+
+[resource]
+shader = ExtResource("1_wf1nv")
+shader_parameter/noise = SubResource("NoiseTexture2D_tg183")
+shader_parameter/speed = 0.1
+shader_parameter/mult = 25.0

@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bcpqolxcvx7wc"]
+
+[ext_resource type="Shader" uid="uid://ch3uuuv4a1m1x" path="res://2dShaders/rounded_corners.gdshader" id="1_jkby1"]
+
+[resource]
+shader = ExtResource("1_jkby1")
+shader_parameter/pixels = 30.0
+shader_parameter/texture_size = Vector2(256, 256)
