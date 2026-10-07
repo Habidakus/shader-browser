@@ -79,7 +79,7 @@ color = Color(0.5, 0.5, 0.5, 1)
 unique_name_in_owner = true
 custom_minimum_size = Vector2(512, 512)
 layout_mode = 2
-texture = ExtResource("2_tlq64")
+texture = ExtResource("3_j2kua")
 expand_mode = 1
 
 [node name="ShaderName" type="Label" parent="." unique_id=1247329545]

@@ -1,10 +1,6 @@
 find . -type f -name "*.gdshader" -exec stat -c "%Y %n" {} \;  | grep -vi roam | grep -vi 2dShaders | sort -n
 
 
-1733010416 ./madscientistclicker/Art/circuit.gdshader
-1737148405 ./loop-hero/Art/enemy.gdshader
-1737148405 ./loop-hero/Art/firepit.gdshader
-1737928078 ./loop-hero/Art/background.gdshader
 1740164866 ./erase/Art/flowShader.gdshader
 1740783396 ./erase/Art/ScrollingRedArrow.gdshader
 1742185146 ./erase/Art/roundedCorners.gdshader

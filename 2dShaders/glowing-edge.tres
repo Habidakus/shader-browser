@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://c66ro8mrmvr3l"]
+
+[ext_resource type="Shader" uid="uid://bobrfjscfdmma" path="res://2dShaders/glowing-edge.gdshader" id="1_dm3n5"]
+
+[resource]
+shader = ExtResource("1_dm3n5")
+shader_parameter/radius = 2.0
+shader_parameter/stride = 3.20000004768384
+shader_parameter/power = 1.7000000253320402
+shader_parameter/cycle_time = 1.90000002831228
+shader_parameter/color = Vector4(0.4, 0.4, 0.01, 1)

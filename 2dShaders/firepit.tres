@@ -1,0 +1,15 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://c66ro8mrmvr3l"]
+
+[ext_resource type="Shader" uid="uid://rh22po8dyb76" path="res://2dShaders/firepit.gdshader" id="1_g67lq"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_vtwt5"]
+noise_type = 3
+frequency = 0.0491
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_i5wrb"]
+noise = SubResource("FastNoiseLite_vtwt5")
+
+[resource]
+shader = ExtResource("1_g67lq")
+shader_parameter/speed = 0.03
+shader_parameter/noise = SubResource("NoiseTexture2D_i5wrb")

@@ -1,0 +1,17 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://c66ro8mrmvr3l"]
+
+[ext_resource type="Shader" uid="uid://80lwrqe1gkyv" path="res://2dShaders/circuit.gdshader" id="1_7j2fk"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_es0os"]
+frequency = 0.1991
+
+[sub_resource type="NoiseTexture3D" id="NoiseTexture3D_l84vf"]
+noise = SubResource("FastNoiseLite_es0os")
+
+[resource]
+shader = ExtResource("1_7j2fk")
+shader_parameter/zoom = 18.0
+shader_parameter/timeScale = 0.01
+shader_parameter/noiseImage = SubResource("NoiseTexture3D_l84vf")
+shader_parameter/color_a = Color(0.901961, 0.919608, 0.966667, 1)
+shader_parameter/color_b = Color(0.366667, 0.366667, 0.298039, 1)

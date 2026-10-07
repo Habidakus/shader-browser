@@ -11,6 +11,9 @@ var _materials: Array = [
 	["Sound Waves", preload("res://2dShaders/sound_waves.tres"), false],
 	["Clouds", preload("res://2dShaders/clouds.tres"), true],
 	["Moving Oil", preload("res://2dShaders/moving_oil.tres"), true],
+	["Firepit", preload("res://2dShaders/firepit.tres"), true],
+	["Circuit", preload("res://2dShaders/circuit.tres"), true],
+	["Glowing Edge", preload("res://2dShaders/glowing-edge.tres"), true],
 ]
 var _index: int = 0;
 
