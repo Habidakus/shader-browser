@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://d3rquch7x7py2"]
+
+[ext_resource type="Shader" uid="uid://c78gg2mdv2r4s" path="res://2dShaders/scrolling_hash.gdshader" id="1_pxyav"]
+
+[resource]
+shader = ExtResource("1_pxyav")
+shader_parameter/ul_speed = 0.33
+shader_parameter/ur_speed = 0.5
+shader_parameter/color = Color(0, 0.39999986, 1, 1)
+shader_parameter/line_thickness = 0.19999999552960998

@@ -17,6 +17,8 @@ var _materials: Array = [
 	["Scrolling", preload("res://2dShaders/scrolling.tres"), false],
 	["Rounded Corners", preload("res://2dShaders/rounded_corners.tres"), false],
 	["Waggly Edges", preload("res://2dShaders/waggly_edges.tres"), false],
+	["Ponderosa", preload("res://2dShaders/ponderosa.tres"), true],
+	["Scrolling Hash", preload("res://2dShaders/scrolling_hash.tres"), false],
 ]
 var _index: int = 0;
 
