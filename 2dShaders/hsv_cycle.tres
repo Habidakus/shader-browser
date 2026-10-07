@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://c4qd7mlyhfro6"]
+
+[ext_resource type="Shader" uid="uid://ds1v5wkjjyejd" path="res://2dShaders/hsv_cycle.gdshader" id="1_kbt2l"]
+
+[resource]
+shader = ExtResource("1_kbt2l")
+shader_parameter/h = 0.2270000107825
+shader_parameter/s = 0.0
+shader_parameter/v = 0.0

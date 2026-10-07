@@ -23,6 +23,9 @@ var _materials: Array = [
 	["Directional Pulse", preload("res://2dShaders/directional_pulse.tres"), true],
 	["Planetary Alignment Timer", preload("res://2dShaders/planet_alignment.tres"), false],
 	["Color Interior", preload("res://2dShaders/color_interior.tres"), false],
+	["Drifing Fog", preload("res://2dShaders/drifting_fog.tres"), false],
+	["Random Blue Lumps", preload("res://2dShaders/random_blue_lumps.tres"), true],
+	["HSV Cycle", preload("res://2dShaders/hsv_cycle.tres"), false],
 ]
 var _index: int = 0;
 
