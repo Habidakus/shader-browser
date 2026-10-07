@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://xpg82g1o2wa4"]
+
+[ext_resource type="Shader" uid="uid://pgqyunsqcho6" path="res://2dShaders/planet_alignment.gdshader" id="1_e4ju6"]
+
+[resource]
+shader = ExtResource("1_e4ju6")
+shader_parameter/color = Color(1, 0.56, 0.56, 1)
+shader_parameter/alignment = 1.0
+shader_parameter/ring1_speed = -1.0
+shader_parameter/ring2_speed = 2.0
+shader_parameter/ring3_speed = 3.0
+shader_parameter/ring4_speed = -5.0
+shader_parameter/ring5_speed = 7.0

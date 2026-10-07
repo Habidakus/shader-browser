@@ -19,6 +19,9 @@ var _materials: Array = [
 	["Waggly Edges", preload("res://2dShaders/waggly_edges.tres"), false],
 	["Ponderosa", preload("res://2dShaders/ponderosa.tres"), true],
 	["Scrolling Hash", preload("res://2dShaders/scrolling_hash.tres"), false],
+	["Contracting Circle", preload("res://2dShaders/contracting_circle.tres"), false],
+	["Directional Pulse", preload("res://2dShaders/directional_pulse.tres"), true],
+	["Planetary Alignment Timer", preload("res://2dShaders/planet_alignment.tres"), false],
 ]
 var _index: int = 0;
 
