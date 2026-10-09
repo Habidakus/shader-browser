@@ -1,0 +1,27 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dnucj1w4r660x"]
+
+[ext_resource type="Shader" uid="uid://o5onmdl186m" path="res://3dShaders/rock.gdshader" id="1_dr5dy"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_aly61"]
+frequency = 0.0603
+offset = Vector3(0, -287.67, 0)
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_5m4b5"]
+noise = SubResource("FastNoiseLite_aly61")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_dr5dy"]
+noise_type = 4
+frequency = 0.2154
+fractal_octaves = 3
+
+[sub_resource type="NoiseTexture3D" id="NoiseTexture3D_aly61"]
+noise = SubResource("FastNoiseLite_dr5dy")
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_dr5dy")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_5m4b5")
+shader_parameter/noise_volume = SubResource("NoiseTexture3D_aly61")
+shader_parameter/edge_steepness = 0.5
+shader_parameter/noise_strength = 0.5
+shader_parameter/noise_scale = 0.1

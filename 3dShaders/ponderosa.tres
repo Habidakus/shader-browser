@@ -1,0 +1,32 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://ixnuojyrmr7w"]
+
+[ext_resource type="Shader" uid="uid://cxky52rgeyihl" path="res://3dShaders/ponderosa.gdshader" id="1_g1jkb"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_g1jkb"]
+frequency = 0.0206
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_kjjm1"]
+noise = SubResource("FastNoiseLite_g1jkb")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_acvyo"]
+frequency = 0.0281
+
+[sub_resource type="NoiseTexture3D" id="NoiseTexture3D_hibhr"]
+noise = SubResource("FastNoiseLite_acvyo")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_bjc1k"]
+noise_type = 3
+frequency = 0.0227
+
+[sub_resource type="NoiseTexture3D" id="NoiseTexture3D_sglgx"]
+noise = SubResource("FastNoiseLite_bjc1k")
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_g1jkb")
+shader_parameter/texture_albedo = SubResource("NoiseTexture2D_kjjm1")
+shader_parameter/grid_size = 100.0
+shader_parameter/speed = 0.02
+shader_parameter/layers = 40
+shader_parameter/x_sampler = SubResource("NoiseTexture3D_hibhr")
+shader_parameter/y_sampler = SubResource("NoiseTexture3D_sglgx")

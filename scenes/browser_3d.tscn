@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://cu62idnxq6f8u"]
+
+[ext_resource type="Material" uid="uid://dnucj1w4r660x" path="res://3dShaders/rock.tres" id="1_w0aac"]
+[ext_resource type="Script" uid="uid://uj2bw8d5nen0" path="res://scripts/omni_light_3d.gd" id="2_prfn2"]
+[ext_resource type="Material" uid="uid://ixnuojyrmr7w" path="res://3dShaders/ponderosa.tres" id="2_tcori"]
+
+[sub_resource type="Environment" id="Environment_tcori"]
+background_mode = 1
+
+[sub_resource type="SphereMesh" id="SphereMesh_hbah7"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_hjipk"]
+size = Vector2(4, 4)
+subdivide_width = 1024
+subdivide_depth = 1024
+
+[sub_resource type="BoxMesh" id="BoxMesh_e17id"]
+material = ExtResource("1_w0aac")
+subdivide_width = 256
+subdivide_height = 256
+subdivide_depth = 256
+
+[node name="Node3D" type="Node3D" unique_id=191429086]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1151824973]
+
+[node name="Previous" type="Button" parent="CanvasLayer" unique_id=611549168]
+unique_name_in_owner = true
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Previous"
+
+[node name="Next" type="Button" parent="CanvasLayer" unique_id=2133293358]
+unique_name_in_owner = true
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -45.0
+offset_bottom = 31.0
+grow_horizontal = 0
+text = "Next"
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=374642839]
+unique_name_in_owner = true
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 24
+text = "This is the Shader Name"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=379081205]
+environment = SubResource("Environment_tcori")
+
+[node name="Sphere" type="MeshInstance3D" parent="." unique_id=772928504]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+mesh = SubResource("SphereMesh_hbah7")
+surface_material_override/0 = ExtResource("1_w0aac")
+
+[node name="Plane" type="MeshInstance3D" parent="." unique_id=2086146812]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.54499346, 0)
+mesh = SubResource("PlaneMesh_hjipk")
+surface_material_override/0 = ExtResource("2_tcori")
+
+[node name="Box" type="MeshInstance3D" parent="." unique_id=1855597821]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+mesh = SubResource("BoxMesh_e17id")
+surface_material_override/0 = ExtResource("1_w0aac")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1738936150]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+shadow_enabled = true
+script = ExtResource("2_prfn2")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=599126038]
+transform = Transform3D(1, 0, 0, 0, 0.89629304, 0.4434623, 0, -0.4434623, 0.89629304, -0.14797592, 1.5263312, 3.4501245)

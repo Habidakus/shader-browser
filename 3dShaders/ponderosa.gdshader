@@ -48,7 +48,7 @@ int get_square(vec2 coord, float our_index_x, float our_index_y, float t)
 
 float get_value(vec2 coord)
 {
-    float t = 0.1 + (sin(TIME) + 1.0) / speed;
+    //float t = 0.1 + (sin(TIME) + 1.0) / speed;
 	// Called for every pixel the material is visible on.
     vec2 our_cell = coord * grid_size;
     float our_index_x = floor(our_cell.x);
@@ -143,20 +143,22 @@ void fragment() {
 	//COLOR.r = vec3(value, value, value);
 	//COLOR = vec3(1,0,0);
 	//float value = get_value(UV);
-	ALBEDO = texture(texture_albedo, UV).rgb;
-	NORMAL_MAP = normalize(texture(texture_albedo, UV).rgb);
+	//ALBEDO = texture(texture_albedo, UV).rgb;
+	//NORMAL_MAP = normalize(texture(texture_albedo, UV).rgb);
+	NORMAL = normalize(vec3(calc, 0, 0));
 	SPECULAR = 1.0;
 	METALLIC = 1.0;
 	AO = 1.0;
 	AO_LIGHT_AFFECT = 1.0;
-	EMISSION = vec3(calc, calc, calc);
+	EMISSION = vec3(calc, 0.1, 0.1);
+	//EMISSION = vec3(calc, calc, calc);
 }
 
 void vertex() {
 	// Called for every vertex the material is visible on.
 	
 	calc = get_value(vec2(VERTEX.x, VERTEX.z) / 64.0);
-	VERTEX.y += 12.0 * calc;
+	//VERTEX.y += 12.0 * calc;
     //NORMAL = vec3(1, 1, 1);
 }
 
