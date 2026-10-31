@@ -78,11 +78,16 @@ func _setup_controls(c_material: ShaderMaterial) -> void:
 		label_name.text = uniform_name
 		controls_list.add_child(label_name)
 		var uniform_type: int = uniform["type"]
-		if uniform_type == TYPE_FLOAT or uniform_type == TYPE_INT:
-			var label_type: Label = Label.new()
-			var float_value = _get_shader_paramter(c_material, uniform)
-			label_type.text = str(float_value)
-			controls_list.add_child(label_type)
+		if uniform_type == TYPE_FLOAT:
+			var line_edit: LineEdit = LineEdit.new()
+			line_edit.text = str(_get_shader_paramter(c_material, uniform))
+			line_edit.text_changed.connect(_on_float_text_changed.bind(c_material, uniform, line_edit))
+			controls_list.add_child(line_edit)
+		elif uniform_type == TYPE_INT:
+			var line_edit: LineEdit = LineEdit.new()
+			line_edit.text = str(_get_shader_paramter(c_material, uniform))
+			line_edit.text_changed.connect(_on_int_text_changed.bind(c_material, uniform, line_edit))
+			controls_list.add_child(line_edit)
 		elif uniform_type == TYPE_OBJECT:
 			var label_type: Label = Label.new()
 			var hint_string: String = uniform["hint_string"]
@@ -127,6 +132,40 @@ func _setup_controls(c_material: ShaderMaterial) -> void:
 			var label_type: Label = Label.new()
 			label_type.text = type_string(uniform_type)
 			controls_list.add_child(label_type)
+
+
+func _on_int_text_changed(new_text: String, c_material: ShaderMaterial, uniform: Dictionary, line_edit: LineEdit) -> void:
+	var new_int: int = int(new_text)
+	var matches: bool = str(new_int) == new_text
+	if matches:
+		c_material.set_shader_parameter(uniform["name"], new_int)
+	else:
+		while matches == false:
+			new_text = new_text.left(-1)
+			if new_text.is_empty():
+				matches = true
+			else:
+				matches = str(new_int) == new_text
+		line_edit.set_block_signals(true)
+		line_edit.text = new_text
+		line_edit.set_block_signals(false)
+
+
+func _on_float_text_changed(new_text: String, c_material: ShaderMaterial, uniform: Dictionary, line_edit: LineEdit) -> void:
+	var new_float: float = float(new_text)
+	var matches: bool = str(new_float) == new_text or str(int(new_float)) == new_text or ("%s." % [int(new_float)]) == new_text
+	if matches:
+		c_material.set_shader_parameter(uniform["name"], new_float)
+	else:
+		while matches == false:
+			new_text = new_text.left(-1)
+			if new_text.is_empty():
+				matches = true
+			else:
+				matches = str(new_float) == new_text or str(int(new_float)) == new_text or ("%s." % [int(new_float)]) == new_text
+		line_edit.set_block_signals(true)
+		line_edit.text = new_text
+		line_edit.set_block_signals(false)
 
 
 func _on_color_changed(new_color: Color, c_material: ShaderMaterial, uniform: Dictionary) -> void:
