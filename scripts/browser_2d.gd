@@ -67,6 +67,8 @@ func _get_shader_paramter(c_material: ShaderMaterial, uniform: Dictionary) -> Va
 
 func _setup_controls(c_material: ShaderMaterial) -> void:
 	var shader: Shader = c_material.shader
+	var link_path: String = shader.resource_path.replace("res://", "https://github.com/Habidakus/shader-browser/blob/main/")
+	%LinkButton.uri = link_path
 	var controls_list: GridContainer = %ControlsList
 	for child: Node in controls_list.get_children():
 		controls_list.remove_child(child)
