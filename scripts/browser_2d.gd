@@ -26,6 +26,7 @@ var _materials: Array = [
 	["Drifing Fog", preload("res://2dShaders/drifting_fog.tres"), false],
 	["Random Blue Lumps", preload("res://2dShaders/random_blue_lumps.tres"), true],
 	["HSV Cycle", preload("res://2dShaders/hsv_cycle.tres"), false],
+	["Double Poisson", preload("res://2dShaders/double_poisson.tres"), true],
 ]
 var _index: int = 0;
 
