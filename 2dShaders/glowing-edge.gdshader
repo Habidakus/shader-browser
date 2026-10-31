@@ -4,7 +4,7 @@ uniform float radius: hint_range(1.0, 10.0, 1.0) = 1.0;
 uniform float stride: hint_range(0.1, 10.0, 0.1) = 1.0;
 uniform float power: hint_range(0.1, 10.0, 0.1) = 2.0;
 uniform float cycle_time: hint_range(0.1, 10.0, 0.1) = 2.0;
-uniform vec4 color = vec4(0.4, 0.4, 0.01, 1.0);
+uniform vec4 color: source_color = vec4(0.4, 0.4, 0.01, 1.0);
 
 void fragment() {
 	vec4 pixel = texture(TEXTURE, UV);

@@ -5,7 +5,7 @@
 [resource]
 shader = ExtResource("1_dm3n5")
 shader_parameter/radius = 2.0
-shader_parameter/stride = 3.20000004768384
+shader_parameter/stride = 3.10000004619372
 shader_parameter/power = 1.7000000253320402
 shader_parameter/cycle_time = 1.90000002831228
-shader_parameter/color = Vector4(0.4, 0.4, 0.01, 1)
+shader_parameter/color = Color(0.4, 0.4, 0.01, 1)

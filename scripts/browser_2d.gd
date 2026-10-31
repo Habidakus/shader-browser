@@ -54,6 +54,88 @@ func _setup_images() -> void:
 		%TextureRect2.material = _materials[_index][1]
 		%TextureRect3.material = _materials[_index][1]
 		%ColorRect.material = _materials[_index][1]
+	_setup_controls(_materials[_index][1])
+
+
+func _get_shader_paramter(c_material: ShaderMaterial, uniform: Dictionary) -> Variant:
+	var current_value = c_material.get_shader_parameter(uniform["name"])
+	if current_value != null:
+		return current_value
+	if uniform.has("default_value"):
+		return uniform["default_value"]
+	return null
+
+func _setup_controls(c_material: ShaderMaterial) -> void:
+	var shader: Shader = c_material.shader
+	var controls_list: GridContainer = %ControlsList
+	for child: Node in controls_list.get_children():
+		controls_list.remove_child(child)
+		child.queue_free()
+	var uniforms: Array = shader.get_shader_uniform_list()
+	for uniform: Dictionary in uniforms:
+		var label_name: Label = Label.new()
+		var uniform_name: String = uniform["name"]
+		label_name.text = uniform_name
+		controls_list.add_child(label_name)
+		var uniform_type: int = uniform["type"]
+		if uniform_type == TYPE_FLOAT or uniform_type == TYPE_INT:
+			var label_type: Label = Label.new()
+			var float_value = _get_shader_paramter(c_material, uniform)
+			label_type.text = str(float_value)
+			controls_list.add_child(label_type)
+		elif uniform_type == TYPE_OBJECT:
+			var label_type: Label = Label.new()
+			var hint_string: String = uniform["hint_string"]
+			if hint_string.is_empty():
+				label_type.text = type_string(uniform_type)
+			else:
+				label_type.text = hint_string
+			controls_list.add_child(label_type)
+		elif uniform_type == TYPE_COLOR:
+			var color = _get_shader_paramter(c_material, uniform)
+			if color == null:
+				var label_color: Label = Label.new()
+				label_color.text = "ERROR: %s" % (type_string(uniform_type))
+				controls_list.add_child(label_color)
+			elif color is Color:
+				var color_picker_button: ColorPickerButton = ColorPickerButton.new()
+				color_picker_button.color = color
+				color_picker_button.color_changed.connect(_on_color_changed.bind(c_material, uniform))
+				controls_list.add_child(color_picker_button)
+			else:
+				var label_color: Label = Label.new()
+				label_color.text = str(color)
+				controls_list.add_child(label_color)
+		elif uniform_type == TYPE_BOOL:
+			var bool_toggle: Button = CheckButton.new()
+			var current_setting: bool = _get_shader_paramter(c_material, uniform)
+			bool_toggle.button_pressed = current_setting
+			bool_toggle.text = "On" if current_setting else "Off"
+			bool_toggle.toggled.connect(_on_bool_toggled.bind(c_material, uniform, bool_toggle))
+			controls_list.add_child(bool_toggle)
+		elif (uniform_type == TYPE_VECTOR2
+			or uniform_type == TYPE_VECTOR2I
+			or uniform_type == TYPE_VECTOR3
+			or uniform_type == TYPE_VECTOR3I
+			or uniform_type == TYPE_VECTOR4
+			or uniform_type == TYPE_VECTOR4I
+			):
+			var label_vector: Label = Label.new()
+			label_vector.text = str(_get_shader_paramter(c_material, uniform))
+			controls_list.add_child(label_vector)
+		else:
+			var label_type: Label = Label.new()
+			label_type.text = type_string(uniform_type)
+			controls_list.add_child(label_type)
+
+
+func _on_color_changed(new_color: Color, c_material: ShaderMaterial, uniform: Dictionary) -> void:
+	c_material.set_shader_parameter(uniform["name"], new_color)
+
+
+func _on_bool_toggled(toggled_on: bool, c_material: ShaderMaterial, uniform: Dictionary, bool_toggle: Button) -> void:
+	c_material.set_shader_parameter(uniform["name"], toggled_on)
+	bool_toggle.text = "On" if toggled_on else "Off"
 
 
 func _on_next_button_button_up() -> void:

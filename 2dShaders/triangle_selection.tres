@@ -4,3 +4,5 @@
 
 [resource]
 shader = ExtResource("1_650gt")
+shader_parameter/band_width = 0.075
+shader_parameter/band_color = Color(0, 0, 0, 1)
